@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Library Backend UI — Auth</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        📚 Library Backend UI
+        <span class="badge">Auth + Books</span>
+      </div>
+      <a class="btn" href="./dashboard.html">Dashboard →</a>
+    </div>
+
+    <div class="grid two">
+      <!-- LEFT: AUTH CARD -->
+      <div class="card auth-card">
+        <div class="head">
+          <div class="title">Welcome 👋</div>
+          <div class="sub">Create your account first, then sign in.</div>
+        </div>
+
+        <div class="tabs">
+          <button id="tabRegister" class="tab active" type="button">Register</button>
+          <button id="tabLogin" class="tab" type="button">Login</button>
+        </div>
+
+        <div class="body">
+          <!-- REGISTER PANEL -->
+          <section id="panelRegister" class="panel">
+            <label class="label">Username</label>
+            <input id="regUsername" class="input" placeholder="aslam" />
+
+            <label class="label">Email</label>
+            <input id="regEmail" class="input" placeholder="aslam@test.com" />
+
+            <label class="label">Password</label>
+            <input id="regPassword" class="input" type="password" placeholder="min 6 chars" />
+
+            <div class="row-actions">
+              <button id="btnRegister" class="btn primary" type="button">Create account</button>
+              <button id="btnGoLogin" class="btn" type="button">I already have an account</button>
+            </div>
+
+            <div id="regMsg" class="toast" style="display:none;"></div>
+            <div class="footer-note">After register, you’ll be moved to login automatically.</div>
+          </section>
+
+          <!-- LOGIN PANEL -->
+          <section id="panelLogin" class="panel" style="display:none;">
+            <label class="label">Email</label>
+            <input id="loginEmail" class="input" placeholder="aslam@test.com" />
+
+            <label class="label">Password</label>
+            <input id="loginPassword" class="input" type="password" placeholder="••••••" />
+
+            <div class="row-actions">
+              <button id="btnLogin" class="btn primary" type="button">Login</button>
+              <button id="btnClear" class="btn" type="button">Clear</button>
+            </div>
+
+            <div id="loginMsg" class="toast" style="display:none;"></div>
+            <div class="footer-note">Token will be saved in <b>localStorage</b>.</div>
+          </section>
+        </div>
+      </div>
+
+          <div class="footer-note">
+            After login you can create books and manage only your own records.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

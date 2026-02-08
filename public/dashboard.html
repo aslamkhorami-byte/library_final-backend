@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Library Dashboard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        📚 Library Dashboard
+        <span id="profileBadge" class="badge">Not loaded</span>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a class="btn" href="./index.html">← Auth</a>
+        <button id="btnLogout" class="btn danger">Logout</button>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <div class="head">
+          <div class="title">Add a Book</div>
+          <div class="sub">Create a new book in your library.</div>
+        </div>
+        <div class="body">
+          <label class="label">Title</label>
+          <input id="bTitle" class="input" placeholder="Clean Code" />
+
+          <label class="label">Author</label>
+          <input id="bAuthor" class="input" placeholder="Robert C. Martin" />
+
+          <div class="row">
+            <div>
+              <label class="label">Category</label>
+              <input id="bCategory" class="input" placeholder="Programming" />
+            </div>
+            <div>
+              <label class="label">Available</label>
+              <select id="bAvailable">
+                <option value="true" selected>true</option>
+                <option value="false">false</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
+            <button id="btnCreate" class="btn primary">Create</button>
+            <button id="btnRefresh" class="btn">Refresh</button>
+          </div>
+
+          <div id="bookMsg" class="toast" style="display:none;"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="head">
+          <div class="title">My Books</div>
+          <div class="sub">Only your own books are shown (owner-based).</div>
+        </div>
+        <div class="body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Available</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="booksTbody"></tbody>
+          </table>
+
+          <div class="footer-note">
+            Tip: click <b>Edit</b> to toggle availability, or <b>Delete</b> to remove the book.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./dashboard.js"></script>
+</body>
+</html>
